@@ -36,7 +36,7 @@
                 </tbody>
             </table>
         {% else %}
-            <h3>No Widgets Exist</h3>
+            <h4>No Widgets Exist</h4>
             <hr>
         {% endif %}
     </div>
@@ -45,12 +45,14 @@
         <h3>Add Widget</h3>
         <form action="" method="POST">
             {% csrf_token %}
-            <span>
+            <table>
+                {{ form.as_table }}
+            </table>
+            <!-- <div>
                 <p>Description: {{widget.description}}</p>
                 <p>Quantity: {{widget.quantity}}</p>
-            </span>
+            </div> -->
         </form>
-        
         <a href="{% url 'add' %}">
             <input type="submit" class="btn" value="ADD WIDGET">
         </a>
